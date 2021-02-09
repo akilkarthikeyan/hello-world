@@ -11,7 +11,7 @@ public class jello {
        {
            arr[i]=f.nextInt();
        }
-       for(int i=0;i<n;i++
+       for(int i=0;i<n;i++)
        {
            ar[i]=arr[i];
        }
