@@ -1,0 +1,61 @@
+import java.util.*;
+ 
+public class jello {
+   public static void main(String args[])
+   {
+       Scanner f=new Scanner(System.in);
+       int n=f.nextInt();
+       long arr[]=new long[n];
+       long ar[]=new long[n];
+       for(int i=0;i<n;i++)
+       {
+           arr[i]=f.nextInt();
+       }
+       for(int i=0;i<n;i++)
+       {
+           ar[i]=arr[i];
+       }
+       int q=f.nextInt();
+       int ar1[][]=new int[q][3];
+       for(int i=0;i<q;i++)
+       {
+           ar1[i][0]=f.nextInt();
+           ar1[i][1]=f.nextInt();
+           ar1[i][2]=f.nextInt();
+       }
+ 
+       Arrays.sort(arr);
+ 
+       long sortedres[]=new long[n+1];
+       long origres[]=new long[n+1];
+       long sum=0;
+       sortedres[0]=0;
+       origres[0]=0;
+       for(int i=1;i<=n;i++) {
+           sum += ar[i-1];
+           origres[i] = sum;
+       }
+       sum=0;
+       for(int i=1;i<=n;i++) {
+           sum += arr[i-1];
+           sortedres[i] = sum;
+       }
+ 
+ 
+ 
+ 
+       for(int i=0;i<q;i++)
+       {
+ 
+           if(ar1[i][0]==1)
+               System.out.println(origres[ar1[i][2]]-origres[ar1[i][1]-1]);
+          else if(ar1[i][0]==2)
+               System.out.println(sortedres[ar1[i][2]]-sortedres[ar1[i][1]-1]);
+ 
+ 
+       }
+ 
+ 
+ 
+   }
+}
